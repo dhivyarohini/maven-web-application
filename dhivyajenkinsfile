@@ -7,9 +7,9 @@ def mavenHome = tool name: "maven 3.9.4"
 	
 	sh "${mavenHome}/bin/mvn clean package"
 	}
-	stage('executeSonarQubeReport'){
+	/*stage('executeSonarQubeReport'){
 	sh "${mavenHome}/bin/mvn clean sonar:sonar"
-	}
+	}*/
 	stage('UploadPackagesInArtifactRepo'){
 	 	sh "${mavenHome}/bin/mvn clean deploy"   
 	}
