@@ -4,7 +4,6 @@ def mavenHome = tool name: "maven 3.9.4"
         git branch: 'development', credentialsId: '4caf58e5-be87-40d3-8ad8-9b10f5b60bc8', url: 'https://github.com/dhivyarohini/maven-web-application.git'
     }
 	stage('Build'){
-	
 	sh "${mavenHome}/bin/mvn clean package"
 	}
 	stage('executeSonarQubeReport'){
